@@ -2,7 +2,7 @@
  * @file Defines the Dice class.
  * @module Dice
  * @author Hao Chen
- * @version 0.0.1
+ * @version 1.0.0
  */
 
 /**
