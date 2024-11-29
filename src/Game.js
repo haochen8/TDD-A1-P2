@@ -21,6 +21,10 @@ export class Game {
     constructor(players, dice) {
       this.players = players
       this.dice = dice
+
+      if (!Array.isArray(players) || players.length === 0) {
+        throw new Error('Players must be an array with at least one player.')
+      }
     }
 
     /**

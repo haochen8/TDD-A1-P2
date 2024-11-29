@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1732888552839" clover="3.2.0">
-  <project timestamp="1732888552839" name="All files">
-    <metrics statements="13" coveredstatements="8" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="4" elements="20" coveredelements="12" complexity="0" loc="13" ncloc="13" packages="1" files="3" classes="3"/>
+<coverage generated="1732888983063" clover="3.2.0">
+  <project timestamp="1732888983063" name="All files">
+    <metrics statements="15" coveredstatements="14" conditionals="6" coveredconditionals="4" methods="5" coveredmethods="5" elements="26" coveredelements="23" complexity="0" loc="15" ncloc="15" packages="1" files="3" classes="3"/>
     <file name="Dice.js" path="/Users/Hao/Desktop/1DV609/TDD-A1-P2/src/Dice.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="18" count="1" type="stmt"/>
     </file>
     <file name="Game.js" path="/Users/Hao/Desktop/1DV609/TDD-A1-P2/src/Game.js">
-      <metrics statements="10" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="2"/>
+      <metrics statements="12" coveredstatements="11" conditionals="6" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <line num="22" count="1" type="stmt"/>
       <line num="23" count="1" type="stmt"/>
-      <line num="24" count="1" type="stmt"/>
-      <line num="32" count="1" type="stmt"/>
-      <line num="33" count="1" type="stmt"/>
+      <line num="25" count="1" type="cond" truecount="3" falsecount="1"/>
+      <line num="26" count="0" type="stmt"/>
       <line num="35" count="1" type="stmt"/>
-      <line num="36" count="0" type="stmt"/>
-      <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="38" count="0" type="stmt"/>
-      <line num="39" count="0" type="stmt"/>
-      <line num="42" count="0" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="39" count="2" type="stmt"/>
+      <line num="40" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="41" count="2" type="stmt"/>
+      <line num="42" count="2" type="stmt"/>
+      <line num="45" count="1" type="stmt"/>
     </file>
     <file name="Player.js" path="/Users/Hao/Desktop/1DV609/TDD-A1-P2/src/Player.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

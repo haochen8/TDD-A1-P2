@@ -11,7 +11,7 @@ test('Game declares a winner based on the highest score', () => {
   const player1 = new Player('Alice')
   const player2 = new Player('Bob')
   
-  const game = new Game(player1, player2, dice)
+  const game = new Game([player1, player2], dice)
 
   const winner = game.play()
 
