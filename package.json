@@ -1,0 +1,17 @@
+{
+  "name": "tdd-a1-p2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "coverage": "nyc jest"
+  },
+  "keywords": [],
+  "author": "Hao Chen",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nyc": "^17.1.0"
+  }
+}
