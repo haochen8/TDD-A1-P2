@@ -98,6 +98,30 @@ test('Winner\'s score should increase by 1 after winning', () => {
   expect(player2.score).toBe(0);
 })
 
+test('Winner should be the player with the highest score after multiple rounds', () => {
+  const dice = new Dice();
+  dice.roll = jest.fn()
+    .mockReturnValueOnce(5) // Round 1
+    .mockReturnValueOnce(3)
+    .mockReturnValueOnce(6) // Round 2
+    .mockReturnValueOnce(4)
+    .mockReturnValueOnce(3) // Round 3
+    .mockReturnValueOnce(5);
+
+  const player1 = new Player('Alice');
+  const player2 = new Player('Bob');
+  const players = [player1, player2];
+  const game = new Game(players, dice);
+
+  game.play();
+  game.play();
+  game.play();
+  
+  expect(player1.score).toBe(2);
+  expect(player2.score).toBe(1);
+
+})
+
 
 
 
