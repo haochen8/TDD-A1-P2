@@ -11,7 +11,7 @@ test('Game declares a winner based on the highest score', () => {
   const player1 = new Player('Alice')
   const player2 = new Player('Bob')
   const players = [player1, player2]
-  const game = new Game(players, dice)
+  const game = new Game(players, dice, 1)
 
   const winner = game.play()
   expect(winner).toBe(player2)
@@ -76,7 +76,7 @@ test('Game keeps the current winner when a player rolls less than the highest sc
   const player1 = new Player('Alice');
   const player2 = new Player('Bob');
   const players = [player1, player2];
-  const game = new Game(players, dice);
+  const game = new Game(players, dice, 1);
 
   const winner = game.play();
   expect(winner).toBe(player1);
@@ -91,7 +91,7 @@ test('Winner\'s score should increase by 1 after winning', () => {
   const player1 = new Player('Alice');
   const player2 = new Player('Bob');
   const players = [player1, player2];
-  const game = new Game(players, dice);
+  const game = new Game(players, dice, 1);
 
   game.play();
   expect(player1.score).toBe(1);
@@ -111,7 +111,7 @@ test('Winner should be the player with the highest score after multiple rounds',
   const player1 = new Player('Alice');
   const player2 = new Player('Bob');
   const players = [player1, player2];
-  const game = new Game(players, dice);
+  const game = new Game(players, dice, 1);
 
   game.play();
   game.play();

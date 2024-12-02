@@ -17,9 +17,10 @@ export class Game {
    * @param {Player[]} players - The players.
    * @param {Dice} dice - The dice.
    */
-  constructor(players, dice) {
+  constructor(players, dice, rolls) {
     this.players = players;
     this.dice = dice;
+    this.rolls = rolls;
 
     if (!Array.isArray(players) || players.length === 0) {
       throw new Error('Players must be an array with at least one player.')
@@ -31,24 +32,34 @@ export class Game {
    * @returns {Player} The winner.
    */
   play() {
-    const result = this.players.reduce((winner, player) => {
-      const roll = this.dice.roll();
-      console.log(`${player.name} rolled ${roll}`);
+    let highestRoll = 0;
+    let winners = [];
 
-      if (roll > (winner?.roll || 0)) {
-        return { player, roll, tie: false };
-      } else if (winner && roll === winner.roll) {
-        console.log('Tie condition executed');
-        return { ...winner, tie: true };
+    this.players.forEach(player => {
+      let totalRoll = 0;
+      for (let i = 0; i < this.rolls; i++) {
+        const roll = this.dice.roll();
+        totalRoll += roll;
+        console.log(`${player.name} rolled a ${roll}`);
       }
-      return winner;
-    }, null);
-    if (result?.tie) {
+      console.log(`${player.name} total roll is ${totalRoll}`);
+
+      if (totalRoll > highestRoll) {
+        highestRoll = totalRoll;
+        winners = [player];
+      } else if (totalRoll === highestRoll) {
+        winners.push(player);
+      }
+    });
+
+    if (winners.length > 1) {
       console.log("It's a tie!");
       return null;
     }
-    result.player.incrementScore();
-    console.log('Returning player:', result?.player);
-    return result.player;
+
+    const winner = winners[0];
+    winner.incrementScore();
+    console.log('Returning player:', winner);
+    return winner;
   }
 }
