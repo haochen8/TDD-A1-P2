@@ -32,3 +32,8 @@ test('Game declares a tie if players have the same score', () => {
   expect(winner).toBeNull()
 })
 
+test('Game throws an error if no players are provided', () => {
+  const dice = new Dice()
+  expect(() => new Game([], dice)).toThrow('Players must be an array with at least one player.')
+})
+
