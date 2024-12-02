@@ -15,4 +15,8 @@ export class Player {
       this.name = name
       this.score = 0
     }
+
+    incrementScore() {
+        this.score+=1
+    }
 }
