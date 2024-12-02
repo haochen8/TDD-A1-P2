@@ -47,7 +47,8 @@ export class Game {
       console.log("It's a tie!");
       return null;
     }
+    result.player.incrementScore();
     console.log('Returning player:', result?.player);
-    return result?.player;
+    return result.player;
   }
 }
