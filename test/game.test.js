@@ -82,6 +82,22 @@ test('Game keeps the current winner when a player rolls less than the highest sc
   expect(winner).toBe(player1);
 });
 
+test('Winner\'s score should increase by 1 after winning', () => {
+  const dice = new Dice();
+  dice.roll = jest.fn()
+    .mockReturnValueOnce(5) 
+    .mockReturnValueOnce(3);
+
+  const player1 = new Player('Alice');
+  const player2 = new Player('Bob');
+  const players = [player1, player2];
+  const game = new Game(players, dice);
+
+  game.play();
+  expect(player1.score).toBe(1);
+  expect(player2.score).toBe(0);
+})
+
 
 
 
