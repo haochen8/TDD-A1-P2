@@ -37,7 +37,8 @@ export class Game {
 
       if (roll > (winner?.roll || 0)) {
         return { player, roll, tie: false };
-      } else if (roll === (winner?.roll || 0)) {
+      } else if (winner && roll === winner.roll) {
+        console.log('Tie condition executed');
         return { ...winner, tie: true };
       }
       return winner;
@@ -46,6 +47,7 @@ export class Game {
       console.log("It's a tie!");
       return null;
     }
-    return result?.player || null;
+    console.log('Returning player:', result?.player);
+    return result?.player;
   }
 }
