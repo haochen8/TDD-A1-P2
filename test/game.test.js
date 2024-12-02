@@ -119,8 +119,25 @@ test('Winner should be the player with the highest score after multiple rounds',
   
   expect(player1.score).toBe(2);
   expect(player2.score).toBe(1);
-
 })
+
+test('Each player roll multiple times, winner should be the player with the highest score', () => {
+  const dice = new Dice();
+  dice.roll = jest.fn()
+    .mockReturnValueOnce(5).mockReturnValueOnce(3) // Player 1
+    .mockReturnValueOnce(6).mockReturnValueOnce(4) // Player 2
+
+  const player1 = new Player('Alice');
+  const player2 = new Player('Bob');
+  const players = [player1, player2];
+  const game = new Game(players, dice, 2);
+  
+  const winner = game.play();
+  
+  expect(winner).toBe(player2);
+})
+
+
 
 
 
