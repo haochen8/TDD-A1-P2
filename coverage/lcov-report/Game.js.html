@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.66% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/12</span>
+                <span class='fraction'>14/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/6</span>
+                <span class='fraction'>12/16</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.66% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/12</span>
+                <span class='fraction'>14/15</span>
             </div>
         
             
@@ -109,7 +109,12 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,31 +134,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @file Defines the Game class.
@@ -162,53 +172,58 @@
  * @version 1.0.0
  */
 &nbsp;
-import { Player } from './Player.js'
-import { Dice } from './Dice.js'
+import { Player } from "./Player.js";
+import { Dice } from "./Dice.js";
 &nbsp;
 /**
  * Represents a game.
  */
 export class Game {
-  
-    /**
-    * Create a game.
-    * @param {Player[]} players - The players.
-    * @param {Dice} dice - The dice.
-    */
-    constructor(players, dice) {
-      this.players = players
-      this.dice = dice
+  /**
+   * Create a game.
+   * @param {Player[]} players - The players.
+   * @param {Dice} dice - The dice.
+   */
+  constructor(players, dice) {
+    this.players = players;
+    this.dice = dice;
 &nbsp;
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (!Array.isArray(players) || players.length === 0) {
-<span class="cstat-no" title="statement not covered" >        throw new Error('Players must be an array with at least one player.')</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!Array.isArray(players) || players.length === 0) {
+      // throw new Error('Players must be an array with at least one player.')
+    }
+  }
+&nbsp;
+  /**
+   * Play the game.
+   * @returns {Player} The winner.
+   */
+  play() {
+    const result = this.players.reduce((winner, player) =&gt; {
+      const roll = this.dice.roll();
+      console.log(`${player.name} rolled ${roll}`);
+&nbsp;
+      if (roll &gt; (winner?.roll || 0)) {
+        return { player, roll, tie: false };
+      } else <span class="missing-if-branch" title="else path not taken" >E</span>if (roll === (winner?.roll || <span class="branch-1 cbranch-no" title="branch not covered" >0)</span>) {
+        return { ...winner, tie: true };
       }
+<span class="cstat-no" title="statement not covered" >      return winner;</span>
+    }, null);
+    if (result?.tie) {
+      console.log("It's a tie!");
+      return null;
     }
-&nbsp;
-    /**
-     * Play the game.
-     * @returns {Player} The winner.
-     */
-    play() {
-      let highestScore = 0
-      let winner = null
-&nbsp;
-      this.players.forEach(player =&gt; {
-        const roll = this.dice.roll()
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (roll &gt; highestScore) {
-          highestScore = roll
-          winner = player
-        }
-      })
-      return winner
-    }
-}</pre></td></tr></table></pre>
+    return result?.player || <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+  }
+}
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-29T14:03:03.057Z
+                at 2024-12-02T15:41:39.060Z
             </div>
         <script src="prettify.js"></script>
         <script>
